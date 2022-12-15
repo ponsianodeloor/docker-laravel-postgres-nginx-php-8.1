@@ -7,3 +7,12 @@ RUN set -ex \
     && docker-php-ext-install pdo pdo_pgsql
 
 WORKDIR "/application"
+
+COPY ./run.sh /tmp
+USER 1000:1000
+
+#ENTRYPOINT ["/tmp/run.sh"]
+
+#CMD ["php", "/application/public/api-roles-permissions-sercop/artisan", "migrate"]
+#appCMD ["/tmp/run.sh"]
+#ENTRYPOINT ["docker-php-entrypoint"]

@@ -19,6 +19,7 @@ services:
       networks:
             testing_net:
                 ipv4_address: 172.28.1.2
+
     webserver:
       image: nginx:alpine
       container_name: ${PROJECT_NAME}-webserver
@@ -42,6 +43,14 @@ services:
       networks:
           testing_net:
               ipv4_address: 172.28.1.4
+      depends_on:
+        - webserver
+        - postgres
+      #entrypoint: ["php", "/application/public/api-roles-permissions-sercop/artisan", "migrate"]
+      #entrypoint: "php /application/public/api-roles-permissions-sercop/artisan migrate"
+      #entrypoint: ["/etc/run.sh"]
+      #command:
+        #- /tmp/run.sh
 networks:
     testing_net:
         ipam:
