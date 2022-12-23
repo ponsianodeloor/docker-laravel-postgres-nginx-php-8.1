@@ -1,7 +1,7 @@
 <?php
-$db_host = "localhost";
+$db_host = "172.28.1.2";
 $db_port = "5432";
-$database = "mascotas";
+$database = "api_roles_permissions_sercop";
 $db_user = "postgres";
 $db_password = "postgres";
 
